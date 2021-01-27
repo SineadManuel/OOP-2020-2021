@@ -10,6 +10,8 @@ public class Main
 
         Animal topCat = new Cat("TopCat");
 
+        Cat ginger = new Cat("Ginger");
+
         System.out.println(misty);
         System.out.println(topCat);
 
@@ -19,6 +21,13 @@ public class Main
 
         System.out.println(misty);
         System.out.println(topCat);
+
+        int i;
+
+        for(i = 0; i < 9; i++)
+        {
+            ginger.kill();
+        }
 
         // What will get printed out??
 
