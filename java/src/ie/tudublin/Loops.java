@@ -33,6 +33,42 @@ public class Loops extends PApplet {
             case 0:
                 ellipse(cx, cy, 100, 100);
                 break;
+            
+            case 1:
+                ellipse(cx, cy, 130, 130);
+                break;
+
+            case 2:
+                ellipse(cx, cy, 160, 160);
+                break;
+
+            case 3:
+                ellipse(cx, cy, 190, 190);
+                break;
+
+            case 4:
+                ellipse(cx, cy, 220, 220);
+                break;
+
+            case 5:
+                ellipse(cx, cy, 250, 250);
+                break;
+
+            case 6:
+                ellipse(cx, cy, 280, 280);
+                break;
+            
+            case 7:
+                ellipse(cx, cy, 310, 310);
+                break;
+            
+            case 8:
+                ellipse(cx, cy, 340, 340);
+                break;
+
+            case 9:
+                ellipse(cx, cy, 370, 370);
+                break;
         }
     }
 }
