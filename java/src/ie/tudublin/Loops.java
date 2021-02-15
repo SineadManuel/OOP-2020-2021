@@ -83,6 +83,7 @@ public class Loops extends PApplet {
                     fill(cgap * i, 255, 255);
                     ellipse(w / 2 + (i * w), cy, w, w);
                 }
+                break;
             }
             case 4:
                 int numLines = 5;
@@ -90,14 +91,43 @@ public class Loops extends PApplet {
                 float radius = 100;
                 for(int i = 0 ; i < numLines ; i ++)
                 {
+                    stroke(50, 255, 255);  
                     float angle = theta * i;
                     float x = sin(angle) * radius;
                     float y = cos(angle) * radius;
                     line(cx, cy, cx + x, cy + y);
-
                 }
-
-            break;
+                break;
+            case 5:
+                int numRects = (int)(mouseX / 50);
+                float w = width / (float) numRects;
+                float cgap = 255 / (float) numRects;
+                //int count = 1;
+                for(int i = 0 ; i < numRects ; i ++)
+                {
+                    fill(i * cgap, 255, 255);
+                    //square(i * w, 50, 500 / ++i);
+                    rect(i * w, 50 * i, w, height / ++i);
+                    // rect(i * w, 0, w, height / count);
+                    // count++;
+                }
+                // if (mouseX < cx && mouseY < cy)
+                // {
+                //     rect(0, 0, cx, cy);
+                // }
+                // else if (mouseX > cx && mouseY < cy)
+                // {
+                //     rect(cx, 0, cx, cy);
+                // }
+                // else if (mouseX < cx && mouseY > cy)
+                // {
+                //     rect(0, cy, cx, cy);
+                // }
+                // else
+                // {
+                //     rect(cx, cy, cx, cy);
+                // }
+                break;
         }
     }
 }
