@@ -99,7 +99,7 @@ public class Arrays extends PApplet {
         for(int i = 0; i < rainfall.length; i++) {
             sum += rainfall[i];
         }
-        println("\nAverage rainfall: " + sum);
+        println("\nAverage rainfall: " + sum/12);
 
 
         // Draw a bar chart of the rainfall
