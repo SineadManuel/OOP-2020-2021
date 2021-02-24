@@ -108,17 +108,17 @@ public class Life extends PApplet {
 
     }
 
-    private void printBoard(boolean[][] board)
-    {
-        for(int row = 0 ; row < size ; row ++)
-        {
-            for (int col = 0 ; col < size ; col ++)
-            {
-                print(board[row][col] ? 1 : 0);
-            }
-            println();
-        }        
-    }
+    // private void printBoard(boolean[][] board)
+    // {
+    //     for(int row = 0 ; row < size ; row ++)
+    //     {
+    //         for (int col = 0 ; col < size ; col ++)
+    //         {
+    //             print(board[row][col] ? 1 : 0);
+    //         }
+    //         println();
+    //     }        
+    // }
 
     public void randomize()
     {
@@ -156,6 +156,7 @@ public class Life extends PApplet {
         
         if (keyCode == '1')
         {
+            randomize();
         }
         if (keyCode == '2')
         {
@@ -182,10 +183,45 @@ public class Life extends PApplet {
         //printBoard(board);        
     }
 
-    private void updateBoard()
+    private void updateBoard(boolean[][] board)
     {
         // Put code here to apply the rules!!
+        for(int row = 0 ; row < size ; row ++)
+        {
+            for (int col = 0 ; col < size ; col ++)
+            {
+                // Counts the cell's neighbours
+                int cells = countNeighbours(row, col);
+                
+                // Cell is alive
+                if(board[row][col] == true)
+                {
+                    if(cells == 2 || cells == 3)
+                    {
+                        // Cell is alive
+                        // board[row][col] = true;
+                        next[row][col] = true;
+                    }
+                    else
+                    {
+                        // Cell is dead
+                        // board[row][col] = false;
+                        next[row][col] = false;
+                    }
+                }
+                // Cell is dead
+                else
+                {
+                    if(cells == 3)
+                    {
+                        // Cell comes back to life
+                        // board[row][col] = true;
+                        next[row][col] = true;
+                    }
+                }
 
+            }
+        }
         
         // Swap board and next
         boolean[][] temp = board;
@@ -201,6 +237,6 @@ public class Life extends PApplet {
     public void draw() {
         background(0);
         drawBoard(board);        
-        updateBoard();
+        updateBoard(board);
     }
 }
