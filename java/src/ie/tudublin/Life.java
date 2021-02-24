@@ -33,14 +33,14 @@ public class Life extends PApplet {
     public void setCell(boolean[][] board, int row, int col, boolean b) {
 
         // ensures row and col are within the bounds of the array
-        if(row > 0 && row < size - 1 && col > 0 && col < size - 1) {
+        if(row >= 0 && row < size -1 && col >= 0 && col < size -1) {
             board[row][col] = b;
         }
     } // end setCell
 
     // return cell at position row and col
     public boolean getCell(boolean[][] board, int row, int col) {
-        if(row > 0 && row < size - 1 && col > 0 && col < size - 1) {
+        if(row >= 0 && row < size -1 && col >= 0 && col < size -1) {
             return board[row][col];
         }
         else {
